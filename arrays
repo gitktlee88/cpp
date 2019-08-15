@@ -1,0 +1,31 @@
+>> Arrays reserve chuk of contiguous memory
+- cannot reset array values easily, once created
+- values can only be accessed/set one at a time
+- cannot create 0 size array
+
+int my_array[2];
+my_array[0] = 0;
+my_array[1] = 1;
+
+int my_array2[3] = { 0,1,2 };
+int my_array3[3]{ 4 };
+int my_array4[]{ 7,7,7 };
+int my_array5[4]{};
+
+>> 2D arrays
+- just arrays within arrays
+- Rows + Columns, like spreadsheet
+   
+int array_2d[2][3];
+array_2d[0][0] = 1;
+array_2d[1][2] = 6;
+
+>> Char arrays
+- 'C' style strings
+
+char a[] = "abcd";
+char b[4] = "abcd"; // change to 5
+char c[]{'a', 'b'}; // add '\0'
+char d[]{'a', 'b', '\0', 'c'};
+
+ 
