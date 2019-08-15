@@ -1,0 +1,82 @@
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
+
+Some C++ data types, their format specifiers, and their most common bit widths are as follows:
+
+Char ("%c"):   1 byte Character type
+Int  ("%d"):   4 bytes integer
+Float ("%f"):  4 bytes real value
+Double ("%lf"): 8 bytes real value
+
+short int:     2 bytes integer
+long int ("%ld"):  8 bytes integer
+long long int:    16
+
+
+////////////////////////
+ex1  :: display the sizes of basic four datatypes 
+     i.e integer, double, float, character.
+
+#include "pch.h"
+#include <iostream>
+
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	while (n--)
+	{
+		string str;
+		cin >> str;
+		if (!isdigit(str.front())) {
+			cout << str.front();
+			cout << sizeof(char) << endl;
+		}
+		else if (str.find('.') == string::npos)
+		{
+			cout << sizeof(int) << endl;
+		}
+		else if (str.size() - str.find('.') <= 6)
+		{
+			cout << sizeof(float) << endl;
+		}
+		else
+		{
+			cout << sizeof(double) << endl;
+		}
+		str.clear();
+	}
+	return 0;
+}
+
+
+//
+int main() {
+	string x, y;
+	int max_num_char = 100;
+	char stop_at = ' ';
+
+	x = cin.get();
+	cin.ignore(max_num_char, stop_at);
+	y = cin.get();
+	cin.ignore(max_num_char, '\n');
+	cout << x << y << endl;
+
+	return 0;
+}
+
