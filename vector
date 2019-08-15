@@ -1,0 +1,262 @@
+#include <iostream>
+#include <cstdio>
+#include <vector>
+using namespace std;
+
+int main() {
+	vector<string> arr;
+	arr.push_back("zero");
+	arr.push_back("one");
+	arr.push_back("two");
+	arr.push_back("three");
+	arr.push_back("four");
+	arr.push_back("five");
+	arr.push_back("six");
+	arr.push_back("seven");
+	arr.push_back("eight");
+	arr.push_back("nine");
+	
+	int n;
+	cin >> n;
+	if (n > 9) cout << "Greater than 9" << endl;
+	else cout << arr[n] << endl;
+
+	
+// another solution //
+	
+	string sarr[] = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+	//int n;
+	//cin >> n;
+	cout << ((1 <= n and n <= 9) ? sarr[n - 1] : "Greater than 9");
+
+// another solution //
+
+    if (n==1) cout << "one";
+    else if (n==2) cout << "two";
+    else if (n==3) cout << "three";
+    else if (n==4) cout << "four";
+    else if (n==5) cout << "five";
+    else if (n==6) cout << "six";
+    else if (n==7) cout << "seven";
+    else if (n==8) cout << "eight";
+    else if (n==9) cout << "nine";
+    else cout << "Greater than 9";	
+
+
+// another solution //
+
+    int x, input;
+    x = scanf_s("%d", &input);
+    switch(input){
+        case 1:
+            printf("one");
+            break;
+        case 2:
+            printf("two");
+            break;
+        case 3:
+            printf("three");
+            break;
+        case 4:
+            printf("four");
+            break;
+        case 5:
+            printf("five");
+            break;
+        case 6:
+            printf("six");
+            break;
+        case 7:
+            printf("seven");
+            break;
+        case 8:
+            printf("eight");
+            break;
+        case 9:
+            printf("nine");
+            break;
+        default:
+            printf("Greater than 9");
+			
+
+	return 0;
+}
+
+
+
+ Declaration:
+vector<int> v; (creates an empty vector of integers)
+ 
+ Size:
+int size = v.size();
+
+ Pushing an integer into a vector:
+v.push_back(x);(where x is an integer.The size increases by 1 after this.)
+
+ Popping the last element from the vector:
+v.pop_back(); (After this the size decreases by 1)
+
+ Sorting a vector:
+sort(v.begin(),v.end()); (Will sort all the elements in the vector)
+sort(v.begin(),v.end() , greater<int>());  descending order
+
+
+   
+// The vect is passed by reference and changes 
+// made here reflect in main() 
+
+void func(vector<int> &vect) 
+{ 
+   vect.push_back(30); 
+} 
+   
+int main() 
+{ 
+    vector<int> vect; 
+    vect.push_back(10); 
+    vect.push_back(20); 
+   
+    func(vect); 
+  
+    for (int i=0; i<vect.size(); i++) 
+       cout << vect[i] << " "; 
+   
+    return 0; 
+} 
+
+   
+// The vect is passed by constant reference 
+// and cannot be changed by this function. 
+
+void func(const vector<int> &vect) 
+{ 
+    // vect.push_back(30);  // Uncommenting this line would get below error 
+	
+    // "prog.cpp: In function 'void func(const std::vector<int>&)': 
+    // prog.cpp:9:18: error: passing 'const std::vector<int>'  
+    // as 'this' argument discards qualifiers [-fpermissive]"    
+    
+    for (int i=0; i<vect.size(); i++) 
+       cout << vect[i] << " "; 
+} 
+   
+int main() 
+{ 
+    vector<int> vect; 
+    vect.push_back(10); 
+    vect.push_back(20); 
+   
+    func(vect); 
+    
+    return 0; 
+} 
+
+// bubble sort
+// Complete the countSwaps function below.
+
+void countSwaps(vector<int> a) {
+    int n = a.size(),i,j,k;
+
+    for (i = 0; i < n; i++) {
+    
+        for (j = 0; j < n - 1; j++) {
+            // Swap adjacent elements if they are in decreasing order
+            if (a[j] > a[j + 1]) {
+                swap(a[j], a[j + 1]);
+                k += 1;
+            }
+        }
+    
+    }
+	
+    cout << "Array is sorted in " << k << " swaps." << endl;
+    cout << "First Element: " << a[0] << endl;
+    cout << "Last Element: " << a[n-1];
+}
+
+
+// array left/right rotation.
+
+    int temp=0;
+    int size = a.size();
+    /*if shifts are more than size of array*/
+    /*example if d=8 size=5 
+    then result will be 8%5=3 left shift only*/
+    d = d%size;
+    int shift = size-d;
+    bool r = false;
+	
+    /*here i am taking decision whether i have to do right shift or left shift*/
+    /*if size=5 d=4 
+    then we can do right shift to 1*/
+    if(d > shift)
+    {
+        d = shift;
+        r = true;
+    }
+
+    for(int i=0;i<d;i++)
+    {
+        /*do right shift*/
+        if(r == true)
+        {
+            temp = a[size-1];
+            for(int j=size-1;j>0;j--)
+            {
+                a[j] = a[j-1];
+            }
+            a[0] = temp;
+        }
+		
+        /*do left shift*/
+        else
+        {
+            temp = a[0];
+            for(int j=0;j<size-1;j++)
+            {
+                a[j] = a[j+1];
+            }
+            a[size-1] = temp;
+        }
+    }
+    return a;
+
+
+///////////  sorting comparator
+
+//#include <utility>      // std::pair, std::make_pair
+#include <string>       // std::string
+#include <iostream>     // std::cout
+#include <vector>       // std::vector
+#include <cstdio>
+#include <algorithm>
+
+using namespace std;
+
+struct Interval
+{
+	int start;
+	string end;
+};
+
+// Compares two intervals according to staring times. 
+bool compareInterval(Interval i1, Interval i2)
+{
+	return (i1.start < i2.start);
+}
+
+int main()
+{
+	Interval arr[] = { {6,"ab"}, {1,"cd"}, {2,"ef"}, {4,"gh"} };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	// sort the intervals in increasing order of 'start' time 
+	sort(arr, arr + n, compareInterval);
+
+	cout << "Intervals sorted by start time : \n";
+	for (int i = 0; i < n; i++)
+		cout << "[" << arr[i].start << "," << arr[i].end
+		<< "] ";
+
+	return 0;
+}
