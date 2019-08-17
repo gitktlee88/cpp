@@ -1,0 +1,15 @@
+int return_one() { return 1;}
+
+int* AVOID_THIS() {
+  int a = 2;    // How then???
+  return &a;    // COVERED LATER.
+} // a destroyed!! Garbage value
+
+
+int main() {
+  int* x, *y, z;
+  x = AVOID_THIS();
+  cout << *x << endl;
+  
+return 0;
+}
