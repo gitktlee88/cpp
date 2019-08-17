@@ -1,0 +1,33 @@
+void add_One(int* i) {
+  (*i)++;    // increment value at *i.
+  *i++;      // next location in memory.
+  //(*i)++;  // BAD! Alters unknown value.
+
+void add_Two(int& j) {
+  j += 2;    // Changes ORIGINAL value.
+}
+
+void increment_Array(double* arr, int size = 5) {
+  for (int i = 0; i < size; i++)
+    arr[i]++;
+}
+
+int main() {
+  int x = 5;
+  add_One(&x);
+  cout << x << endl;
+  
+  add_Two(x);
+  cout << x << endl;
+  
+  double super_array[]{ 1,2,3,4.5,77.7 );
+  for (int i = 0; i < 5; i++)
+    cout << super_array[i] << endl;
+  
+  string s;
+  getline(cin, s);
+  return 0;
+}
+
+
+
