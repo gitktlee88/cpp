@@ -12,7 +12,12 @@ int main() {
 
 
 //////////// use std::find as follows:
-
+string s1, s2;
+if (s1.find(s2) != std::string::npos) {
+    std::cout << "found!" << '\n';
+}
+//////////
+vector v;
 if (std::find(v.begin(), v.end(), "abc") != v.end())
 {
   // Element in vector.
