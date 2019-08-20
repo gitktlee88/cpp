@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int h1[26],h2[26];
+int main() {
+    string a,b;
+    cin>>a>>b;
+    for(int i=0;i<a.length();i++){
+        h1[a[i]-'a']++;
+    }
+    for(int i=0;i<b.length();i++){
+        h2[b[i]-'a']++;
+    }
+    int ans=0;
+    for(int i=0;i<26;i++){
+        ans=ans+max(h1[i],h2[i])-min(h1[i],h2[i]);
+    }
+    cout<<ans<<endl;
+    return 0;
+}
