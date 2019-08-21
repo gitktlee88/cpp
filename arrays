@@ -1,4 +1,4 @@
->> Arrays reserve chuk of contiguous memory
+>> Arrays reserve chunk of contiguous memory
 - cannot reset array values easily, once created
 - values can only be accessed/set one at a time
 - cannot create 0 size array
