@@ -1,0 +1,57 @@
+Fundamental Concepts:
+  
+ 0. Command Line switches or options
+ 1. Compilation,
+ 2. Link,
+ 
+ 3. Preprocessing,
+ 4. Translation Unit,
+ 
+ 5. Two different ways
+  to define preprocessing macros
+  
+  
+A. cl hello.cpp
+ 
+ (1) Compiles and generates hello.obj --- object file 
+ and 
+ (2) links hello.exe --- executable file
+ 
+
+ Command line switch
+ 
+ /c - compiles only ... do not generate exe file
+   
+ Compilation means the process that generates obj file 
+ .obj files are called object files.
+ 
+ cl hello.obj 
+  links hello.obj and generates exe or executable file
+  
+ Link means generate executable files.
+ 
+cl hello.cpp --- means compile and link and generate executables.
+
+cl /c hello.cpp ---- compile only and generate obj file
+cl hello.obj ---- link to generate exe file
+
+The primary reason to separately compile and link 
+is for the efficiency of the build process
+
+"Build" means "compile" and "link" and "generate" executables
+"Compile" means to generate object file (or .obj)
+"Link" means generate executable or exe or dll files.
+
+"Preprocessing" means replace #include directive's header contents
+ in the .cpp file.
+ 
+ 
+"Compilation" is two-step processes
+
+ 1. "Preprocess" include files
+ 2. "Generate" object files
+ 
+During "Preprocessing" stage,
+ the compiler substitutes preprocessor macros
+ 
+"Translation Unit" means .cpp files that is preprocessed.
