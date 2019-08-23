@@ -45,3 +45,28 @@ string twoStrings(string s1, string s2) {
     
 }
 
+
+
+// Complete the superReducedString function below.
+string superReducedString(string s) {
+        vector<char> st;
+        string res;
+
+        for (int i = 0; i < (int)s.length(); i++)
+        {            
+            if (!st.empty() && st.back() == s[i])
+                st.pop_back();
+            else
+                st.push_back(s[i]);
+        }
+	
+        if (res.empty()) return "EMpty String";
+	
+        else
+        {
+            for (int i = 0; i < (int)st.size(); i++)            
+       		//cout << st[i] << " "; 
+       		res += st[i];    
+		
+    return res;
+}
