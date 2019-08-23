@@ -83,23 +83,31 @@ int main() {
 }
 
 
-
+/////////////////////////////////////////////////////
  Declaration:
-vector<int> v; (creates an empty vector of integers)
+ '''''''''''
+vector<int> v;     (creates an empty vector of integers)
+
+ Read first & last char in vector:
+      ''''''''''''
+cout << st.front() << st.back();
  
- Size:
-int size = v.size();
+ Size: 
+ '''' int size = v.size();
 
  Pushing an integer into a vector:
-v.push_back(x);(where x is an integer.The size increases by 1 after this.)
+ '''''''
+v.push_back(x); (where x is an integer.The size increases by 1 after this.)
 
  Popping the last element from the vector:
+ '''''''
 v.pop_back(); (After this the size decreases by 1)
 
  Sorting a vector:
+ '''''''
 sort(v.begin(),v.end()); (Will sort all the elements in the vector)
 sort(v.begin(),v.end() , greater<int>());  descending order
-
+///////////////////////////////////////////
 
    
 // The vect is passed by reference and changes 
