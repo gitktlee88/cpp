@@ -16,6 +16,33 @@ string s1, s2;
 if (s1.find(s2) != std::string::npos) {
     std::cout << "found!" << '\n';
 }
+
+//////////// strong password
+
+string numbers = "0123456789";
+string lower_case = "abcdefghijklmnopqrstuvwxyz";
+string upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+string special_characters = "!@#$%^&*()-+";
+
+int main()
+{
+    int n;
+    string s;
+    cin >> n >> s;
+    int w0 = 0, w1 = 0, w2 = 0, w3 = 0;
+    for (char c : s)
+    {
+	if (numbers.find(c) != string::npos) w0 = 1;
+	if (lower_case.find(c) != string::npos) w1 = 1;
+	if (upper_case.find(c) != string::npos) w2 = 1;
+	if (special_characters.find(c) != string::npos) w3 = 1;
+    }
+    
+    int ret = max(4 - w0 - w1 - w2 - w3, 6 - n);
+    printf("%d\n", ret);
+    
+    return 0;
+}
 //////////
 vector<string> v;
 if (std::find(v.begin(), v.end(), "abc") != v.end())
