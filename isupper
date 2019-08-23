@@ -1,0 +1,14 @@
+// Complete the camelcase function below.
+int camelcase(string s) {
+    int x = 1;
+    for(int i=0; i<s.length(); i++)
+    {
+        //'isupper() function returns true
+        //if given character is in uppercase
+        if(isupper(s[i]))
+            x += 1;
+    }
+    
+    return x;    
+
+}
