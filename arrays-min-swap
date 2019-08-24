@@ -1,0 +1,31 @@
+vector<int>v[100003];
+bool visit[100003];
+
+int dfs(int i)
+{
+    visit[i] = true;
+    int z = 1;
+    
+    for(auto x: v[i])
+        if(!visit[x])
+            z += dfs(x);
+            
+    return z;  
+}
+
+// Complete the minimumSwaps function below.
+int minimumSwaps(vector<int> A) {
+    
+    for(int i = 0; i < A.size(); ++i )
+        v[i].push_back(A[i]-1), v[A[i]-1].push_back(i);
+    
+    int c = 0;
+
+    for(int i = 0; i < A.size(); ++i)
+    {
+        if(!visit[i])
+            c += dfs(i) - 1;
+    }
+    
+    return c;        
+}
