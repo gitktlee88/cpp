@@ -30,6 +30,32 @@ void process_input(int n) {
 	
 }
 
+
+//////// multiple exceptions /////////
+
+try
+{
+    // throws something
+}
+catch ( const MostSpecificException& e )
+{
+    // handle custom exception
+}
+catch ( const LessSpecificException& e )
+{
+    // handle custom exception
+}
+catch ( const std::exception& e )
+{
+    // standard exceptions
+}
+catch ( ... )
+{
+    // everything else
+}
+
+
+
 int main() {
 	int n;
 	//cin >> n;
