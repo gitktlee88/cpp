@@ -12,3 +12,27 @@ Severity values MUST be in the range of 0 to 7 inclusive.
           5       Notice: normal but significant condition
           6       Informational: informational messages
           7       Debug: debug-level messages
+
+
+//////// multiple exceptions /////////
+
+try
+{
+    // throws something
+}
+catch ( const MostSpecificException& e )
+{
+    // handle custom exception
+}
+catch ( const LessSpecificException& e )
+{
+    // handle custom exception
+}
+catch ( const std::exception& e )
+{
+    // standard exceptions
+}
+catch ( ... )
+{
+    // everything else
+}
