@@ -30,6 +30,15 @@ void process_input(int n) {
 	
 }
 
+int main() {
+	int n;
+	//cin >> n;
+	scanf_s("%d", &n);
+	process_input(n);
+	return 0;
+}
+
+
 
 //////// multiple exceptions /////////
 
@@ -53,16 +62,3 @@ catch ( ... )
 {
     // everything else
 }
-
-
-
-int main() {
-	int n;
-	//cin >> n;
-	scanf_s("%d", &n);
-	process_input(n);
-	return 0;
-}
-
-
-
