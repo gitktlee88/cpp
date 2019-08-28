@@ -1,0 +1,27 @@
+const int x = 5;
+
+namespace foo {
+  const int x = 0;
+}
+
+int bar() {
+  int x = 1;
+  return x;
+}
+
+struct Meh {
+  static const int x = 2;
+}
+
+int main() {
+  std::cout << x;     // => 5
+  {
+    int x = 4;
+    std::cout << x;   // => 4
+    std::cout << ::x; // => 5, this one looks for x outside the current scope
+  }
+  std::cout << Meh::x; // => 2, use the definition of x inside the scope of Meh
+  std::cout << foo::x; // => 0, use the definition of x inside foo
+  std::cout << bar();  // => 1, use the definition of x inside bar (returned by bar)
+}
+
