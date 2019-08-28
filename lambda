@@ -1,0 +1,38 @@
+In C++11 and later, a lambda expression, often called a lambda,
+is a convenient way of defining an anonymous function object (a closure) 
+right at the location where it is invoked or passed as an argument to a function.
+
+// simplest form lambda expression \\
+
+[ capture clause ] (parameters) -> return-type  
+{   
+   definition of method   
+} 
+
+*note* 
+   Generally return-type in lambda expression are evaluated by compiler itself 
+   and we don’t need to specify that explicitly 
+   and -> return-type part can be ignored 
+   but in some complex case as in conditional statement, compiler can’t make out the return type 
+   and we need to specify that.     
+
+Syntax used for capturing variables :
+      [&] : capture all external variable by reference
+      [=] : capture all external variable by value
+      [a, &b] : capture a by value and b by reference
+
+A lambda with empty capture clause [ ] can access only those variable which are local to it.
+
+
+#include <algorithm>
+#include <cmath>
+
+void abssort(float* x, unsigned n) {
+    std::sort(x, x + n,
+        // Lambda expression begins
+        [](float a, float b) {
+            return (std::abs(a) < std::abs(b));
+        } // end of lambda expression
+    );
+}
+
