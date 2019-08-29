@@ -29,3 +29,16 @@ int minimumSwaps(vector<int> A) {
     
     return c;        
 }
+
+
+
+// Complete the minimum Absolute Difference function below.
+int minimumAbsoluteDifference(vector<int> a) {
+    sort(a.begin(), a.end());
+    int mn = 2000000005;
+    for (int i = 0; i < a.size() - 1; i++) {
+        mn = min(mn, abs(a[i] - a[i + 1]));
+    }
+    cout << mn << endl;
+    return mn;
+}
