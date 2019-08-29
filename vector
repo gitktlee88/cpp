@@ -163,71 +163,38 @@ int main()
 // Complete the countSwaps function below.
 
 void countSwaps(vector<int> a) {
-    int n = a.size(),i,j,k;
+	int n = a.size(), i, j, k=0;
 
-    for (i = 0; i < n; i++) {
-    
-        for (j = 0; j < n - 1; j++) {
-            // Swap adjacent elements if they are in decreasing order
-            if (a[j] > a[j + 1]) {
-                swap(a[j], a[j + 1]);
-                k += 1;
-            }
-        }
-    
-    }
-	
-    cout << "Array is sorted in " << k << " swaps." << endl;
-    cout << "First Element: " << a[0] << endl;
-    cout << "Last Element: " << a[n-1];
+	for (i = 0; i < n; i++) {
+
+		for (j = 0; j < n - 1; j++) {
+			// Swap adjacent elements if they are in decreasing order
+			if (a[j] > a[j + 1]) {
+				swap(a[j], a[j + 1]);
+				k += 1;
+			}
+		}
+
+	}
+
+	cout << "Array is sorted in " << k << " swaps." << endl;
+	cout << "First Element: " << a[0] << endl;
+	cout << "Last Element: " << a[n - 1];
 }
 
 
-// array left/right rotation.
+int main() {
+	//scanf_s("%d%d", &n, &m);
+	//for (int i = 0; i < n; i++) {
+	//	scanf_s("%d", &c[i]);
+	//}
+	//printf("%lld\n", calc());
+	//return 0;
 
-    int temp=0;
-    int size = a.size();
-    /*if shifts are more than size of array*/
-    /*example if d=8 size=5 
-    then result will be 8%5=3 left shift only*/
-    d = d%size;
-    int shift = size-d;
-    bool r = false;
-	
-    /*here i am taking decision whether i have to do right shift or left shift*/
-    /*if size=5 d=4 
-    then we can do right shift to 1*/
-    if(d > shift)
-    {
-        d = shift;
-        r = true;
-    }
+	vector<int> v = { 2, 3, 1, 4, 5 };
+	countSwaps(v);
+}
 
-    for(int i=0;i<d;i++)
-    {
-        /*do right shift*/
-        if(r == true)
-        {
-            temp = a[size-1];
-            for(int j=size-1;j>0;j--)
-            {
-                a[j] = a[j-1];
-            }
-            a[0] = temp;
-        }
-		
-        /*do left shift*/
-        else
-        {
-            temp = a[0];
-            for(int j=0;j<size-1;j++)
-            {
-                a[j] = a[j+1];
-            }
-            a[size-1] = temp;
-        }
-    }
-    return a;
 
 
 // Complete the getMinimumCost.
@@ -258,3 +225,4 @@ int main() {
 	printf("%lld\n", calc());
 	return 0;
 }
+
