@@ -48,3 +48,42 @@ int main() {
 	return 0;
 }
 
+
+
+///////////  sorting comparator
+
+#include <utility>      // std::pair, std::make_pair
+#include <string>       // std::string
+#include <iostream>     // std::cout
+#include <vector>       // std::vector
+
+using namespace std;
+
+struct Interval
+{
+	int start;
+	string end;
+};
+
+// Compares two intervals according to staring times. 
+bool compareInterval(Interval i1, Interval i2)
+{
+	return (i1.start < i2.start);
+}
+
+int main()
+{
+	Interval arr[] = { {6,"ab"}, {1,"cd"}, {2,"ef"}, {4,"gh"} };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	// sort the intervals in increasing order of 'start' time 
+	sort(arr, arr + n, compareInterval);
+
+	cout << "Intervals sorted by start time : \n";
+	for (int i = 0; i < n; i++)
+		cout << "[" << arr[i].start << "," << arr[i].end
+		<< "] ";
+
+	return 0;
+}
+
