@@ -46,7 +46,7 @@ void vectorDemo()
 	A.push_back(100);
 	A.push_back(100);
 	A.push_back(100);
-	//2,3,11,14,100,100,100,100,123
+	//2,3,11,14,100,100,100,100,100,123
 	A.push_back(123);
 
 	//lower_bound returns an iterator pointing to the first element 
